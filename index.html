@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCSM 管理面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            background: url('https://source.unsplash.com/random/1080x1920?anime') no-repeat center center / cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* 顶部导航栏 */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #2d2d2d;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            z-index: 100;
+        }
+
+        .menu-btn, .back-btn {
+            color: #fff;
+            font-size: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+
+        .logo {
+            height: 35px;
+            margin: 0 auto;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        /* 路径导航 */
+        .breadcrumb {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            color: #666;
+            font-size: 14px;
+            background: rgba(255,255,255,0.8);
+            z-index: 99;
+        }
+
+        /* 登录卡片 */
+        .login-card {
+            background: rgba(255,255,255,0.9);
+            width: 100%;
+            max-width: 420px;
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 120px;
+        }
+
+        .login-card h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #2d2d2d;
+        }
+
+        .login-card p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        /* 输入框组 */
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 48px;
+            padding: 0 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #409eff;
+        }
+
+        /* 按钮组 */
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 48%;
+            height: 44px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn.register {
+            background: #fff;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn.register:active {
+            border-color: #409eff;
+            background: #f8f9fa;
+        }
+
+        .btn.login {
+            background: #409eff;
+            color: #fff;
+        }
+
+        .btn.login:active {
+            background: #337ecc;
+        }
+
+        /* 底部版权 */
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #409eff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="top-bar">
+        <button class="menu-btn">☰</button>
+        <button class="back-btn">↩</button>
+        <div class="logo">LBLOI导入器</div>
+    </div>
+
+    <!-- 路径导航 -->
+    <div class="breadcrumb">
+        管理面板 / 登录页
+    </div>
+
+    <!-- 登录卡片 -->
+    <div class="login-card">
+        <h1>用户验证</h1>
+        <p>请使用服务器的 MCSMManager 账号进入面板</p>
+
+        <div class="input-group">
+            <input type="text" placeholder="账号">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="密码">
+        </div>
+
+        <div class="btn-group">
+            <button class="btn register">注册</button>
+            <button class="btn login">登录</button>
+        </div>
+
+        <div class="footer">
+            Powered by <a href="https://github.com/MCSManager/MCSManager" target="_blank">MCSManager</a>
+        </div>
+    </div>
+</body>
+</html>
